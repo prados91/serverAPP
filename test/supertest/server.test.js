@@ -6,7 +6,7 @@ const { products } = dao;
 
 const requester = supertest("http://localhost:" + process.env.PORT + "/api");
 
-describe("Testeando SERVER API", () => {
+describe("Testeando SERVER API: USER", () => {
     const user = {
         name: "SUPERTEST",
         email: "augusto@coder.com",
