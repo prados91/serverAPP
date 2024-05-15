@@ -1,7 +1,7 @@
-//import winstonLog from "../utils/logger/index.js";
-fetch("/api/sessions/", { method: "POST" })
+fetch("/api/sessions/me", { method: "POST" })
     .then((res) => res.json())
     .then((res) => {
+        console.log(res);
         if (res.statusCode === 200) {
             document.querySelector(".navbar-nav").removeChild(document.querySelector("#registerButton"));
             document.querySelector(".navbar-nav").removeChild(document.querySelector("#loginButton"));
@@ -28,8 +28,7 @@ fetch("/api/sessions/", { method: "POST" })
                         });
                     }
                 } catch (error) {
-                    //winstonLog.ERROR(error);
-                    console.log(error)
+                    console.log(error);
                 }
             });
         } else {
@@ -37,9 +36,9 @@ fetch("/api/sessions/", { method: "POST" })
             document.querySelector(".navbar-nav").removeChild(document.querySelector("#ordersButton"));
             document.querySelector(".navbar-nav").removeChild(document.querySelector("#signout"));
         }
-        if (res.response?.role === 0) {
+        if (res.response?.role === "USER") {
             document.querySelector(".navbar-nav").removeChild(document.querySelector("#formButton"));
-        } else if (res.response?.role === 1) {
+        } else if (res.response?.role === "ADMIN") {
             document.querySelector(".navbar-nav").removeChild(document.querySelector("#ordersButton"));
         }
     });

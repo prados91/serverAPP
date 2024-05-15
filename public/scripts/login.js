@@ -17,7 +17,7 @@ selector.addEventListener("click", async () => {
         if (response.statusCode === 200) {
             Swal.fire({
                 title: "LOGED IN!",
-                icon: "succes",
+                icon: "success",
                 confirmButtonColor: "#3085d6",
                 confirmButtonText: "GO!",
             }).then((result) => {

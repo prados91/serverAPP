@@ -1,4 +1,3 @@
-//import winstonLog from "../utils/logger/index.js";
 const google = document.querySelector("#google");
 google.addEventListener("click", async () => {
     try {
@@ -8,7 +7,6 @@ google.addEventListener("click", async () => {
         };
         let response = await fetch("/api/sessions/google", opts);
         response = await response.json();
-        //winstonLog.INFO(response);
         //response.session && location.replace("/");
     } catch (error) {
         //alert(error.message);
@@ -30,7 +28,6 @@ github.addEventListener("click", async () => {
         };
         let response = await fetch("/api/sessions/github", opts);
         response = await response.json();
-        //winstonLog.INFO(response);
         //response.session && location.replace("/");
     } catch (error) {
         Swal.fire({
