@@ -10,5 +10,4 @@ const swaggerOptions = {
     },
     apis: [`${__dirname}/src/docs/*.yaml`],
 };
-
 export default swaggerOptions;
