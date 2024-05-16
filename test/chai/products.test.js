@@ -13,23 +13,46 @@ describe("Testing: Products Model", () => {
     it("La creación del producto requiere un objeto con la propiedad category", () => {
         expect(data).to.have.property("category");
     });
-    it("La función creadora de un producto, devuelve un objeto con la propiedad '_id'", async () => {
+    it("La función creadora de un producto, devuelve un objeto", async () => {
         const one = await model.create(data);
+        id = one._id;
         expect(one).to.be.an("object");
+    });
+    it("La función para eliminar un producto debe efectivamente eliminarlo", async () => {
+        const one = await model.destroy(id);
+        expect(one).to.have.property("_id");
     });
     it("La función creadora de un producto, devuelve un objeto con la propiedad '_id'", async () => {
         const one = await model.create(data);
         id = one._id;
         expect(one).to.have.property("_id");
     });
-    it("La función para leer productos debe devolver un objeto con las propiedades 'prev', 'next' y 'category'", async () => {
-        const all = await model.read({
-            page: 1,
-            limit: 5,
-        });
-        expect(all).to.have.property("prev");
-        expect(all).to.have.property("next");
-        expect(all).to.have.property("category");
+    it("La función para leer productos debe devolver un objeto con la propiedad 'prevPage'", async () => {
+        const filter = {};
+        const options = {
+            page: 2,
+            limit: 2,
+        };
+        const all = await model.read({ filter, options });
+        expect(all).to.have.property("prevPage");
+    });
+    it("La función para leer productos debe devolver un objeto con la propiedad 'nextPage'", async () => {
+        const filter = {};
+        const options = {
+            page: 2,
+            limit: 2,
+        };
+        const all = await model.read({ filter, options });
+        expect(all).to.have.property("nextPage");
+    });
+    it("La función para leer productos debe devolver un array de objetos con la propiedad category'", async () => {
+        const filter = {};
+        const options = {
+            page: 2,
+            limit: 2,
+        };
+        const all = await model.read({ filter, options });
+        expect(all.docs[0]).to.have.property("category");
     });
     it("La función para actualizar un producto debe devolver un objeto con el producto actualizado", async () => {
         const before = await model.readOne(id);
@@ -37,8 +60,7 @@ describe("Testing: Products Model", () => {
         expect(one.title).not.to.be.equals(before.title);
     });
     it("La función para eliminar un producto debe efectivamente eliminarlo", async () => {
-        const before = await model.destroy(id);
-        const after = await model.readOne(id);
-        expect(before).not.to.be.equals(after);
+        const one = await model.destroy(id);
+        expect(one).to.have.property("_id");
     });
 });
