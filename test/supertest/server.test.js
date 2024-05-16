@@ -6,13 +6,21 @@ const { products } = dao;
 
 const requester = supertest("http://localhost:" + process.env.PORT + "/api");
 
-describe("Testeando SERVER API: USER", () => {
+const model = products;
+
+describe("Testeando SERVER API: USER + PRODUCT", () => {
     const user = {
         name: "SUPERTEST",
         email: "augusto@coder.com",
         password: "hola1234",
         role: "ADMIN",
         verified: true,
+    };
+    const product = {
+        title: "SUPERTEST",
+        category: "TEST",
+        price: 1,
+        stock: 1,
     };
     let token = {};
     it("Registro de un usuario correctamente", async function () {
@@ -34,6 +42,25 @@ describe("Testeando SERVER API: USER", () => {
         const { statusCode, _body } = response;
         uid = _body.response.docs[0]._id;
         expect(statusCode).to.be.equals(200);
+    });
+    let pid;
+    it("Creación de un producto correctamente", async () => {
+        const one = await model.create(product);
+        pid = one._id;
+        expect(one).to.have.property("_id");
+    });
+    it("Lectura del producto creado", async () => {
+        const one = await model.readOne(pid);
+        expect(one).to.have.property("_id");
+    });
+    it("Actualización del producto creado", async () => {
+        const before = await model.readOne(pid);
+        const one = await model.update(pid, { title: "SUPER TEST MODIFICADO" });
+        expect(one.title).not.to.be.equals(before.title);
+    });
+    it("Elimincación del producto creado", async () => {
+        const one = await model.destroy(pid);
+        expect(one).to.have.property("_id");
     });
     it("Cerrado de sesión correctamente", async () => {
         const response = await requester.post("/sessions/signout").set("Cookie", [token.key + "=" + token.value]);
