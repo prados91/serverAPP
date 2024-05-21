@@ -25,8 +25,8 @@ class SessionsController {
                 .cookie("token", req.token, {
                     maxAge: 60 * 60 * 24 * 7,
                     httpOnly: true,
-                    /*secure: true,
-                    sameSite: "None",*/ //ver si así funciona y esto es correcto
+                    secure: true,
+                    sameSite: "None", //ver si así funciona y esto es correcto
                 })
                 .json({
                     statusCode: 200,
