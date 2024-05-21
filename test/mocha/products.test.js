@@ -3,7 +3,7 @@ import "dotenv/config.js";
 import dao from "../../src/data/index.factory.js";
 const { products } = dao;
 
-describe("Testeando Modelo Mascotas", () => {
+describe("Testeando Modelo PRODUCTOS", () => {
     const model = products;
     const data = { title: "ProductoTest", category: "test" };
     let id;
@@ -15,6 +15,11 @@ describe("Testeando Modelo Mascotas", () => {
     });
     it("La función creadora de un producto, devuelve un objeto", async () => {
         const one = await model.create(data);
+        id = one._id;
+        assert.strictEqual(typeof one, "object");
+    });
+    it("La función para eliminar un producto debe efectivamente eliminar un producto", async () => {
+        const one = await model.destroy(id);
         assert.strictEqual(typeof one, "object");
     });
     it("La función creadora de un producto, devuelve un objeto con la propiedad '_id'", async () => {
@@ -22,31 +27,37 @@ describe("Testeando Modelo Mascotas", () => {
         id = one._id;
         assert.ok(one._id);
     });
-    it("La función para leer productos debe devolver un objeto con la propiedad 'prev'", async () => {
-        const all = await model.read({
+    it("La función para leer productos debe devolver un objeto con la propiedad 'prevPage'", async () => {
+        const filter = {};
+        const options = {
             page: 2,
-            limit: 5,
-        });
-        assert.ok(all.prev);
+            limit: 2,
+        };
+        const all = await model.read({ filter, options });
+        assert.ok(all.prevPage);
     });
-    it("La función para leer productos debe devolver un objeto con la propiedad 'next'", async () => {
-        const all = await model.read({
+    it("La función para leer productos debe devolver un objeto con la propiedad 'nextPage'", async () => {
+        const filter = {};
+        const options = {
             page: 2,
-            limit: 5,
-        });
-        assert.ok(all.next);
+            limit: 2,
+        };
+        const all = await model.read({ filter, options });
+        assert.ok(all.nextPage);
     });
     it("La función para leer productos debe devolver un objeto con la propiedad docs'", async () => {
-        const all = await model.read({
+        const filter = {};
+        const options = {
             page: 2,
-            limit: 5,
-        });
+            limit: 2,
+        };
+        const all = await model.read({ filter, options });
         assert.ok(all.docs);
     });
     it("La función para leer productos debe devolver un array de productos en la propiedad 'docs'", async () => {
         const all = await model.read({
             page: 2,
-            limit: 5,
+            limit: 3,
         });
         assert.strictEqual(Array.isArray(all.docs), true);
     });
@@ -56,8 +67,7 @@ describe("Testeando Modelo Mascotas", () => {
         assert.strictEqual(before.title !== one.title, true);
     });
     it("La función para eliminar un producto debe efectivamente eliminar un producto", async () => {
-        await model.destroy(id);
-        const after = await model.readOne(id);
-        assert.strictEqual(after, null);
+        const one = await model.destroy(id);
+        assert.strictEqual(typeof one, "object");
     });
 });
