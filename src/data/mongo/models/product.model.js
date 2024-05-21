@@ -7,8 +7,8 @@ const schema = new Schema(
         title: { type: String, required: true },
         category: { type: String, required: true },
         photo: { type: String, default: "https://i.postimg.cc/rmgbCmG5/default-Product-Image.jpg" },
-        price: { type: Number, default: 1000 },
-        stock: { type: Number, default: 50 },
+        price: { type: Number, default: 10 },
+        stock: { type: Number, default: 1000 },
         owner_id: { type: Types.ObjectId, ref: "users" },
     },
     { timestamps: true }
