@@ -1,14 +1,15 @@
 import env from "./src/utils/env.utils.js";
 import express from "express";
-import { createServer } from "http";
-import { Server } from "socket.io";
+//import { createServer } from "http";
+//import { Server } from "socket.io";
+//import socketUtils from "./src/utils/socket.utils.js";
 import morgan from "morgan";
 import { engine } from "express-handlebars";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import compression from "express-compression";
-
-import socketUtils from "./src/utils/socket.utils.js";
+import cluster from "cluster";
+import { cpus } from "os";
 
 import router from "./src/routers/index.router.js";
 import errorHandler from "./src/middlewares/errorHandler.js";
@@ -30,10 +31,10 @@ const ready = () => {
 };
 const specs = swaggerJSDoc(swaggerOptions);
 
-const httpServer = createServer(server);
-const socketServer = new Server(httpServer);
-httpServer.listen(PORT, ready);
-socketServer.on("connection", socketUtils);
+//const httpServer = createServer(server);
+//const socketServer = new Server(httpServer);
+//httpServer.listen(PORT, ready);
+//socketServer.on("connection", socketUtils);
 
 //Views
 server.engine("handlebars", engine());
@@ -56,4 +57,14 @@ server.use("/", router);
 server.use(errorHandler);
 server.use(pathHandler);
 
-export { socketServer };
+//clusters
+if (cluster.isPrimary) {
+    const numberOfProcess = cpus().length;
+    for (let i = 1; i <= numberOfProcess; i++) {
+        cluster.fork();
+    }
+} else {
+    server.listen(PORT, ready);
+}
+
+//export { socketServer };
