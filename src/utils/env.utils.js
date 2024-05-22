@@ -18,4 +18,5 @@ export default {
     GOOGLE_PASSWORD: process.env.GOOGLE_PASSWORD,
     MODE: process.env.MODE,
     RECOVERY: process.env.RECOVERY,
+    STRIPE: process.env.STRIPE,
 };

@@ -1,9 +1,9 @@
-import checkoutController from "../../controllers/payments.controller";
-import CustomRouter from "../CustomRouter";
+import CustomRouter from "../CustomRouter.js";
+import { checkout } from "../../controllers/payments.controller.js";
 
 class PaymentsRouter extends CustomRouter {
     init() {
-        this.create("/checkout", checkoutController);
+        this.create("/checkout", ["USER", "PREM"], checkout);
     }
 }
 

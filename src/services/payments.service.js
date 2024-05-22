@@ -1,12 +1,10 @@
-import checkoutRepository from "../repositories/payments.rep.js";
+import repository from "../repositories/payments.rep.js";
 
-const checkoutService = async (filter) => {
-    try {
-        const response = await checkoutRepository(filter);
-        return response;
-    } catch (error) {
-        throw error;
+class PaymentsService {
+    constructor() {
+        this.repository = repository;
     }
-};
-
-export default checkoutService;
+    checkout = async ({ filter, options }) => await this.repository.checkout({ filter, options });
+}
+const service = new PaymentsService();
+export default service;

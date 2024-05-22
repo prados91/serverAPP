@@ -58,7 +58,8 @@ server.use(errorHandler);
 server.use(pathHandler);
 
 //clusters
-if (cluster.isPrimary) {
+
+if (!cluster.isPrimary) {
     const numberOfProcess = cpus().length;
     for (let i = 1; i <= numberOfProcess; i++) {
         cluster.fork();
@@ -66,5 +67,4 @@ if (cluster.isPrimary) {
 } else {
     server.listen(PORT, ready);
 }
-
 //export { socketServer };
