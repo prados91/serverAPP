@@ -22,12 +22,17 @@ class SessionsController {
     login = async (req, res, next) => {
         try {
             return res
-                .cookie("token", req.token, {
-                    maxAge: 60 * 60 * 24 * 7,
-                    httpOnly: true,
-                    secure: true,
-                    sameSite: "None", //ver si así funciona y esto es correcto
-                })
+                .cookie(
+                    "token",
+                    req.token,
+                    {
+                        maxAge: 60 * 60 * 24 * 7,
+                        httpOnly: true,
+                        secure: true,
+                        sameSite: "None", //ver si así funciona y esto es correcto
+                    },
+                    { expiresIn: 3600 }
+                )
                 .json({
                     statusCode: 200,
                     message: "Logged in!",
