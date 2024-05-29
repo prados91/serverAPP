@@ -89,8 +89,12 @@ class SessionsController {
 
     me = async (req, res, next) => {
         try {
-            const { email, role, photo, name, _id: id, lastName } = req.user;
-            return res.success200({ email, role, photo, name, _id: id, lastName });
+            if (req.user) {
+                const { email, role, photo, name, _id: id, lastName } = req.user;
+                return res.success200({ email, role, photo, name, _id: id, lastName });
+            } else {
+                return res.error401();
+            }
         } catch (error) {
             return next(error);
         }
