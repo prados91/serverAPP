@@ -31,7 +31,7 @@ class SessionsController {
                         secure: true,
                         sameSite: "None", //ver si así funciona y esto es correcto
                     },
-                    { expiresIn: 3600 }
+                    //{ expiresIn: 3600 }
                 )
                 .json({
                     statusCode: 200,
