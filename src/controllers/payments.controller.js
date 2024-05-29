@@ -13,7 +13,6 @@ class PaymentsController {
                 lean: true,
             };
             const { _id } = req.user;
-            const user_id = _id.toString();
             const response = await this.service.checkout({ _id, options });
             return res.json(response);
         } catch (error) {
