@@ -60,17 +60,23 @@ class UsersController {
     update = async (req, res, next) => {
         try {
             const { uid } = req.params;
-            const { password } = req.body;
+            const data = req.body;
+            const { password } = data;
             const one = await this.service.readOne(uid);
             if (!one) {
                 CustomError.new(errors.notFound);
             } else {
-                const verify = verifyHash(password, one.password);
-                if (verify) {
-                    CustomError.new(errors.equal);
+                if (password) {
+                    const verify = verifyHash(password, one.password);
+                    if (verify) {
+                        CustomError.new(errors.equal);
+                    } else {
+                        const newPass = createHash(password);
+                        const response = await this.service.update(uid, { password: newPass });
+                        return res.success201(response);
+                    }
                 } else {
-                    const newPass = createHash(password);
-                    const response = await this.service.update(uid, { password: newPass });
+                    const response = await this.service.update(uid, data);
                     return res.success201(response);
                 }
             }
@@ -78,6 +84,7 @@ class UsersController {
             return next(error);
         }
     };
+
     destroy = async (req, res, next) => {
         try {
             const { uid } = req.params;

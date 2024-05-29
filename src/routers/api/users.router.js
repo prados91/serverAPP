@@ -10,12 +10,11 @@ import {
     verify,
 } from "../../controllers/users.controller.js";
 
-
 class UsersRouter extends CustomRouter {
     init() {
         this.create("/", ["ADMIN", "USER", "PREM"], create);
         this.read("/", ["ADMIN"], read);
-        this.read("/:uid", ["USER", "PREM"], readOne);
+        this.read("/:uid", ["USER", "PREM", "ADMIN"], readOne);
         this.update("/:uid", ["USER", "PREM"], update);
         this.destroy("/:uid", ["USER", "PREM"], destroy);
         this.read("/:email", ["ADMIN"], readByEmail);
