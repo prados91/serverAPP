@@ -43,7 +43,8 @@ class PaymentsRep {
         productsOnCart = productsOnCart.map((each) => new CheckoutDTO(each));
         const line_items = productsOnCart;
         const mode = "payment";
-        const success_url = "http://localhost:8080/thanks.html";
+        //const success_url = "http://localhost:5173/thanks.html";
+        const success_url = "https://node-55655-react.vercel.app/thanks";
         const intent = await stripe.checkout.sessions.create({
             line_items,
             mode,
