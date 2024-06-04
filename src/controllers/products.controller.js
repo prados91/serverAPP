@@ -41,6 +41,30 @@ class ProductsController {
             return next(error);
         }
     };
+    readPrem = async (req, res, next) => {
+        try {
+            const options = {
+                limit: req.query.limit || 10,
+                page: req.query.page || 1,
+                sort: { title: 1 },
+                lean: true,
+            };
+            const filter = {};
+            if (req.query.title) {
+                filter.title = new RegExp(req.query.title.trim(), "i");
+            }
+            if (req.query.sort === "desc") {
+                options.sort.title = "desc";
+            }
+            if (req.user && req.user.role === "PREM") {
+                filter.owner_id = { $eq: req.user._id };
+            }
+            const all = await this.service.read({ filter, options });
+            return res.success200(all);
+        } catch (error) {
+            return next(error);
+        }
+    };
     readOne = async (req, res, next) => {
         try {
             const { pid } = req.params;
@@ -91,5 +115,5 @@ class ProductsController {
 
 export default ProductsController;
 const controller = new ProductsController();
-const { create, read, readOne, update, destroy } = controller;
-export { create, read, readOne, update, destroy };
+const { create, read, readOne, update, destroy ,readPrem} = controller;
+export { create, read, readOne, update, destroy ,readPrem};
