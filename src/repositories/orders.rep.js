@@ -16,6 +16,7 @@ class OrdersRep {
     readOne = async (id) => await this.model.readOne(id);
     update = async (id, data) => await this.model.update(id, data);
     destroy = async (id) => await this.model.destroy(id);
+    report = async (id) => await this.model.report(id);
 }
 
 const repository = new OrdersRep();
