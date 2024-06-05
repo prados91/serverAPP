@@ -30,7 +30,7 @@ components:
         price: 500
         stock: 500
   responses:
-    create:
+    pCreate:
       type: object
       properties:
         statusCode:
@@ -49,7 +49,7 @@ components:
           photo: https://static.wixstatic.com/media/40f312_a5b43fc24aa047be900291cceccb3f17~mv2.png/v1/fill/w_477,h_477,al_c,q_85,enc_auto/40f312_a5b43fc24aa047be900291cceccb3f17~mv2.png
           price: 500
           stock: 500
-    read:
+    pRead:
       type: object
       properties:
         statusCode:
@@ -82,7 +82,7 @@ components:
             price: 50000
             stock: 50000
             owner_id: b57c3250b6775dd772906b29
-    update:
+    pUpdate:
       type: object
       properties:
         statusCode:
@@ -101,7 +101,7 @@ components:
           price: 500
           stock: 500
           owner_id: b57c3250b6775dd772906b29
-    readOne:
+    pReadOne:
       type: object
       properties:
         statusCode:
@@ -120,7 +120,7 @@ components:
             price: 500
             stock: 500
             owner_id: b57c3250b6775dd772906b29
-    auth:
+    pAuth:
       type: object
       properties:
         statusCode:
@@ -135,7 +135,7 @@ components:
       example:
         statusCode: 401
         message: Invalid credentials
-    forbidden:
+    pForbidden:
       type: object
       properties:
         statusCode:
@@ -150,7 +150,7 @@ components:
       example:
         statusCode: 403
         message: Forbiden
-    notFound:
+    pNotFound:
       type: object
       properties:
         statusCode:
@@ -165,7 +165,7 @@ components:
       example:
         statusCode: 404
         message: Not found
-    fatal:
+    pFatal:
       type: object
       properties:
         statusCode:
@@ -205,25 +205,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#components/responses/create'
+                $ref: '#components/responses/pCreate'
         '401':
           description: Credenciales invalidas
           content:
             application/json:
               schema:
-                $ref: '#components/responses/auth'
+                $ref: '#components/responses/pAuth'
         '403':
           description: Acceso no permitido
           content:
             application/json:
               schema:
-                $ref: '#components/responses/forbidden'
+                $ref: '#components/responses/pForbidden'
         '500':
           description: Falla del servidor al crear un producto
           content:
             application/json:
               schema:
-                $ref: '#components/responses/fatal'
+                $ref: '#components/responses/pFatal'
     get:
       summary: Leer los productos de la base de datos
       tags:
@@ -247,19 +247,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#components/responses/read'
+                $ref: '#components/responses/pRead'
         '404':
           description: Documentos no encontrados
           content:
             application/json:
               schema:
-                $ref: '#components/responses/notFound'
+                $ref: '#components/responses/pNotFound'
         '500':
           description: Falla del servidor al leer los documentos
           content:
             application/json:
               schema:
-                $ref: '#components/responses/fatal'
+                $ref: '#components/responses/pFatal'
   /api/products/:pid:
     get:
       summary: Leer un producto de la base de datos
@@ -278,19 +278,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#components/responses/readOne'
+                $ref: '#components/responses/pReadOne'
         '404':
           description: Documento no encontrados
           content:
             application/json:
               schema:
-                $ref: '#components/responses/notFound'
+                $ref: '#components/responses/pNotFound'
         '500':
           description: Falla del servidor al leer el documento
           content:
             application/json:
               schema:
-                $ref: '#components/responses/fatal'
+                $ref: '#components/responses/pFatal'
     put:
       summary: Actualizar los datos de un producto
       tags:
@@ -316,31 +316,31 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#components/responses/update'
+                $ref: '#components/responses/pUpdate'
         '401':
           description: Credenciales invalidas
           content:
             application/json:
               schema:
-                $ref: '#components/responses/auth'
+                $ref: '#components/responses/pAuth'
         '403':
           description: Acceso no permitido
           content:
             application/json:
               schema:
-                $ref: '#components/responses/forbidden'
+                $ref: '#components/responses/pForbidden'
         '404':
           description: Documento/s no encontrados
           content:
             application/json:
               schema:
-                $ref: '#components/responses/notFound'
+                $ref: '#components/responses/pNotFound'
         '500':
           description: Falla del servidor al actualizar un producto
           content:
             application/json:
               schema:
-                $ref: '#components/responses/fatal'
+                $ref: '#components/responses/pFatal'
     delete:
       summary: Eliminar un producto de la base de datos
       tags:
@@ -360,31 +360,31 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#components/responses/update'
+                $ref: '#components/responses/pUpdate'
         '401':
           description: Credenciales invalidas
           content:
             application/json:
               schema:
-                $ref: '#components/responses/auth'
+                $ref: '#components/responses/pAuth'
         '403':
           description: Acceso no permitido
           content:
             application/json:
               schema:
-                $ref: '#components/responses/forbidden'
+                $ref: '#components/responses/pForbidden'
         '404':
           description: Documento/s no encontrados
           content:
             application/json:
               schema:
-                $ref: '#components/responses/notFound'
+                $ref: '#components/responses/pNotFound'
         '500':
           description: Falla del servidor al eliminar un producto
           content:
             application/json:
               schema:
-                $ref: '#components/responses/fatal'
+                $ref: '#components/responses/pFatal'
   /api/products/premium/me:
     get:
       summary: Usuario premium lee todo sus productos de la base de datos
@@ -409,22 +409,22 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#components/responses/read'
+                $ref: '#components/responses/pRead'
         '403':
           description: No puede acceder a esta sección
           content:
             application/json:
               schema:
-                $ref: '#components/responses/forbidden'
+                $ref: '#components/responses/pForbidden'
         '404':
           description: Documentos no encontrados
           content:
             application/json:
               schema:
-                $ref: '#components/responses/notFound'
+                $ref: '#components/responses/pNotFound'
         '500':
           description: Falla del servidor al leer los documentos
           content:
             application/json:
               schema:
-                $ref: '#components/responses/fatal'
+                $ref: '#components/responses/pFatal'
