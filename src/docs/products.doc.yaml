@@ -385,3 +385,46 @@ paths:
             application/json:
               schema:
                 $ref: '#components/responses/fatal'
+  /api/products/premium/me:
+    get:
+      summary: Usuario premium lee todo sus productos de la base de datos
+      tags:
+        - Product
+      parameters:
+        - name: page
+          in: query
+          type: integer
+          description: Número de página a mostrar
+        - name: limit
+          in: query
+          type: integer
+          description: Número de documentos a mostrar por página
+        - name: title
+          in: query
+          type: string
+          description: Nombre o parte del nombre del producto a mostrar
+      responses:
+        '200':
+          description: Éxito en la lectura de productos
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/read'
+        '403':
+          description: No puede acceder a esta sección
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/forbidden'
+        '404':
+          description: Documentos no encontrados
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/notFound'
+        '500':
+          description: Falla del servidor al leer los documentos
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/fatal'
