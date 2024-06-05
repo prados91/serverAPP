@@ -58,7 +58,7 @@ describe("Testeando SERVER API: USER + PRODUCT", () => {
         const one = await model.update(pid, { title: "SUPER TEST MODIFICADO" });
         expect(one.title).not.to.be.equals(before.title);
     });
-    it("Elimincación del producto creado", async () => {
+    it("Eliminación del producto creado", async () => {
         const one = await model.destroy(pid);
         expect(one).to.have.property("_id");
     });
