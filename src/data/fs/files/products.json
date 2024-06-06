@@ -1,500 +1,147 @@
-[{
-    "_id": {
-      "$oid": "65c01a193d3aba585829153d"
-    },
-    "title": "Camiseta Bostón Celtics",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F02%20-%20bc-camiseta.jpg?alt=media&token=26735190-7716-47a0-8eb3-f6b684e1782d",
-    "price": 25,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 100,
-    "category": "camisetas",
-    "createdAt": {
-      "$date": "2024-02-04T23:13:29.887Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:13:29.887Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a303d3aba585829154b"
-    },
-    "title": "Campera Golden State Warriors",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F04%20-%20gs-buzo.jpg?alt=media&token=4fb6e3b8-b45a-49ae-83f2-41b839297f77",
-    "price": 35,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 100,
-    "category": "camperas",
-    "createdAt": {
-      "$date": "2024-02-04T23:13:52.811Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:13:52.811Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a293d3aba5858291547"
-    },
-    "title": "Campera Boston Celtics",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F04%20-%20bc-buzo.jpg?alt=media&token=cf0cd054-7382-4da4-bb0c-2f69079a5b71",
-    "price": 35,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 100,
-    "category": "camperas",
-    "createdAt": {
-      "$date": "2024-02-04T23:13:45.441Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:13:45.441Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a443d3aba5858291559"
-    },
-    "title": "Gorra San Antonio Spurs",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F01%20-%20sa-gorra.jpg?alt=media&token=e5c5f597-1166-4c3d-bfeb-8b1967acec9a",
-    "price": 18,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 100,
-    "category": "gorras",
-    "createdAt": {
-      "$date": "2024-02-04T23:14:12.690Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:14:12.690Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a4a3d3aba585829155d"
-    },
-    "title": "Pantalón Chicago Bulls",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F03%20-%20cb-pantalon.jpg?alt=media&token=a2a442ca-ac8d-45f9-95ac-ebab1214bdf5",
-    "price": 12,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 100,
-    "category": "pantalones",
-    "createdAt": {
-      "$date": "2024-02-04T23:14:18.769Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:14:18.769Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a563d3aba585829155f"
-    },
-    "title": "Pantalón Golden State Warriors",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F03%20-%20gs-pantalon.jpg?alt=media&token=fa5aaba5-dc01-4a3a-867a-b3ad52cb3a82",
-    "price": 12,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 100,
-    "category": "pantalones",
-    "createdAt": {
-      "$date": "2024-02-04T23:14:30.909Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:14:30.909Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a593d3aba5858291561"
-    },
-    "title": "Pantalón Los Angeles Lakers",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F03%20-%20la-pantalon.jpg?alt=media&token=a2348d41-39b7-431d-9524-bcff5a16b910",
-    "price": 18,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 100,
-    "category": "pantalones",
-    "createdAt": {
-      "$date": "2024-02-04T23:14:33.746Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:14:33.746Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a633d3aba5858291567"
-    },
-    "title": "Zapatillas Air Jordan Blue High",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F05-zapatilla5.png?alt=media&token=d719ec59-a785-4234-8cfa-cae31678ce2f",
-    "price": 75,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 50,
-    "category": "zapatillas",
-    "createdAt": {
-      "$date": "2024-02-04T23:14:43.944Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:14:43.944Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a1d3d3aba585829153f"
-    },
-    "title": "Camiseta Chicago Bulls",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F02%20-%20cb-camiseta.jpg?alt=media&token=4c873159-fc21-4aa3-bd68-f320bef7655c",
-    "price": 28,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 100,
-    "category": "camisetas",
-    "createdAt": {
-      "$date": "2024-02-04T23:13:33.239Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:13:33.239Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a3e3d3aba5858291555"
-    },
-    "title": "Gorra Golden State",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F01%20-%20gs-gorra.jpg?alt=media&token=63e65e7d-c470-4d07-9274-be953b9a6be1",
-    "price": 18.5,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 100,
-    "category": "gorras",
-    "createdAt": {
-      "$date": "2024-02-04T23:14:06.734Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:14:06.734Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a3c3d3aba5858291553"
-    },
-    "title": "Gorra Chicago Bulls",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F01%20-%20cb-gorra.jpg?alt=media&token=b16aba4b-a8e3-4b91-9805-7313c4139a06",
-    "price": 18,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 100,
-    "category": "gorras",
-    "createdAt": {
-      "$date": "2024-02-04T23:14:04.018Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:14:04.018Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a5c3d3aba5858291563"
-    },
-    "title": "Pantalón San Antonio Spurs",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F03%20-%20sa-pantalon.jpg?alt=media&token=ebe924cc-264e-4857-a56f-aad14ac882ec",
-    "price": 18,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 100,
-    "category": "pantalones",
-    "createdAt": {
-      "$date": "2024-02-04T23:14:36.636Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:14:36.636Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a413d3aba5858291557"
-    },
-    "title": "Gorra Los Angeles Lakers",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F01%20-%20la-gorra.jpg?alt=media&token=913d887c-9259-49e4-b7b0-6606ca834444",
-    "price": 18,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 100,
-    "category": "gorras",
-    "createdAt": {
-      "$date": "2024-02-04T23:14:09.817Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:14:09.817Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a263d3aba5858291545"
-    },
-    "title": "Camiseta San Antonio Spurs",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F02%20-%20sa-camiseta.jpg?alt=media&token=9bbedd9d-902d-4717-a86d-7ab1799ed35d",
-    "price": 18,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 100,
-    "category": "camisetas",
-    "createdAt": {
-      "$date": "2024-02-04T23:13:42.752Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:13:42.752Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a2c3d3aba5858291549"
-    },
-    "title": "Campera Chicago Bulls",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F04%20-%20cb-buzo.jpg?alt=media&token=74eae124-51cf-4f6f-8b19-7039c1e9b344",
-    "price": 35,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 100,
-    "category": "camperas",
-    "createdAt": {
-      "$date": "2024-02-04T23:13:48.476Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:13:48.476Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a203d3aba5858291541"
-    },
-    "title": "Camiseta Golden State Warriors",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F02%20-%20gs-camiseta.jpg?alt=media&token=3ba5c397-fcc0-4ffe-b808-b205f173951a",
-    "price": 18,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 100,
-    "category": "camisetas",
-    "createdAt": {
-      "$date": "2024-02-04T23:13:36.123Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:13:36.123Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a663d3aba5858291569"
-    },
-    "title": "Zapatillas Jordan",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F05-zapatilla4.png?alt=media&token=39a9d89c-a216-4276-9df1-02a08161f74a",
-    "price": 75,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 50,
-    "category": "zapatillas",
-    "createdAt": {
-      "$date": "2024-02-04T23:14:46.867Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:14:46.867Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a693d3aba585829156b"
-    },
-    "title": "Zapatillas Nike LeBron NXXT Low",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F05-zapatilla2.png?alt=media&token=be3b974d-5c8f-47c5-a66f-dd9a44772216",
-    "price": 60,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 50,
-    "category": "zapatillas",
-    "createdAt": {
-      "$date": "2024-02-04T23:14:49.996Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:14:49.996Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a6c3d3aba585829156d"
-    },
-    "title": "Zapatillas Nike LeBron XXI",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F05-zapatilla3.png?alt=media&token=86605a63-ba46-485d-9399-7945859d6cfe",
-    "price": 70,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 50,
-    "category": "zapatillas",
-    "createdAt": {
-      "$date": "2024-02-04T23:14:52.725Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:14:52.725Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a223d3aba5858291543"
-    },
-    "title": "Camiseta Los Angeles Lakers",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F02%20-%20la-camiseta.jpg?alt=media&token=a8f54359-1f93-4234-8664-cbef48acd3ee",
-    "price": 18,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 100,
-    "category": "camisetas",
-    "createdAt": {
-      "$date": "2024-02-04T23:13:38.950Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:13:38.950Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a333d3aba585829154d"
-    },
-    "title": "Campera Los Angeles Lakers",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F04%20-%20la-buzo.jpg?alt=media&token=2fffadb2-8e2c-43e1-9c4f-8bec89541980",
-    "price": 35,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 100,
-    "category": "camperas",
-    "createdAt": {
-      "$date": "2024-02-04T23:13:55.618Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:13:55.618Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a363d3aba585829154f"
-    },
-    "title": "Campera San Antionio Spurs",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F04%20-%20sa-buzo.jpg?alt=media&token=3c0ddf23-75a0-4200-8e5c-53b54bcf2a46",
-    "price": 35,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 100,
-    "category": "camperas",
-    "createdAt": {
-      "$date": "2024-02-04T23:13:58.188Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:13:58.188Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a393d3aba5858291551"
-    },
-    "title": "Gorra Boston Celtics",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F01%20-%20bc-gorra.jpg?alt=media&token=9411cee0-b56a-413e-8694-ef569d2a2123",
-    "price": 18,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 10,
-    "category": "gorras",
-    "createdAt": {
-      "$date": "2024-02-04T23:14:01.166Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:14:01.166Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "65c01a473d3aba585829155b"
-    },
-    "title": "Pantalón Boston Celtics",
-    "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F03%20-%20bc-pantalon.jpg?alt=media&token=6e191b9d-bcdc-47c8-80b8-1d4933b354d3",
-    "price": 18,
-    "owner_id": {
-      "$oid": "661ad05f443398c661a1974b"
-    },
-    "stock": 100,
-    "category": "pantalones",
-    "createdAt": {
-      "$date": "2024-02-04T23:14:15.755Z"
-    },
-    "updatedAt": {
-      "$date": "2024-02-04T23:14:15.755Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "665fd2d7187f48cdace5172e"
-    },
-    "title": "Campera New York",
-    "category": "TEST",
-    "photo": "https://fanatics.frgimages.com/new-york-knicks/youth-mitchell-and-ness-blue-new-york-knicks-hardwood-classics-retro-logo-pullover-hoodie_ss5_p-201249925+u-1qh2oz2j5qcel7wqrudo+v-oapggwaxxq5etxvou0oi.jpg?_hv=2&w=900",
-    "price": 42,
-    "stock": 100,
-    "owner_id": {
-      "$oid": "665f9dea3bd7a3a09bbe1778"
-    },
-    "createdAt": {
-      "$date": "2024-06-05T02:52:07.730Z"
-    },
-    "updatedAt": {
-      "$date": "2024-06-05T02:57:04.629Z"
-    },
-    "__v": 0
-  }]
+[
+    {
+      "_id": "65c01a193d3aba585829153d",
+      "title": "Camiseta Bostón Celtics",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F02%20-%20bc-camiseta.jpg?alt=media&token=26735190-7716-47a0-8eb3-f6b684e1782d",
+      "price": 25,
+      "owner_id": "661ad05f443398c661a1974b",
+      "stock": 100,
+      "category": "camisetas",
+      "created_at": "2024-02-04T23:13:29.887Z",
+      "updated_at": "2024-02-04T23:13:29.887Z",
+      "version": 0
+    },
+    {
+      "_id": "65c01a303d3aba585829154b",
+      "title": "Campera Golden State Warriors",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F04%20-%20gs-buzo.jpg?alt=media&token=4fb6e3b8-b45a-49ae-83f2-41b839297f77",
+      "price": 35,
+      "owner_id": "661ad05f443398c661a1974b",
+      "stock": 100,
+      "category": "camperas",
+      "created_at": "2024-02-04T23:13:52.811Z",
+      "updated_at": "2024-02-04T23:13:52.811Z",
+      "version": 0
+    },
+    {
+      "_id": "65c01a293d3aba5858291547",
+      "title": "Campera Boston Celtics",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F04%20-%20bc-buzo.jpg?alt=media&token=cf0cd054-7382-4da4-bb0c-2f69079a5b71",
+      "price": 35,
+      "owner_id": "661ad05f443398c661a1974b",
+      "stock": 100,
+      "category": "camperas",
+      "created_at": "2024-02-04T23:13:45.441Z",
+      "updated_at": "2024-02-04T23:13:45.441Z",
+      "version": 0
+    },
+    {
+      "_id": "65c01a443d3aba5858291559",
+      "title": "Gorra San Antonio Spurs",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F01%20-%20sa-gorra.jpg?alt=media&token=e5c5f597-1166-4c3d-bfeb-8b1967acec9a",
+      "price": 18,
+      "owner_id": "661ad05f443398c661a1974b",
+      "stock": 100,
+      "category": "gorras",
+      "created_at": "2024-02-04T23:14:12.690Z",
+      "updated_at": "2024-02-04T23:14:12.690Z",
+      "version": 0
+    },
+    {
+      "_id": "65c01a4a3d3aba585829155d",
+      "title": "Pantalón Chicago Bulls",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F03%20-%20cb-pantalon.jpg?alt=media&token=a2a442ca-ac8d-45f9-95ac-ebab1214bdf5",
+      "price": 12,
+      "owner_id": "661ad05f443398c661a1974b",
+      "stock": 100,
+      "category": "pantalones",
+      "created_at": "2024-02-04T23:14:18.769Z",
+      "updated_at": "2024-02-04T23:14:18.769Z",
+      "version": 0
+    },
+    {
+      "_id": "65c01a563d3aba585829155f",
+      "title": "Pantalón Golden State Warriors",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F03%20-%20gs-pantalon.jpg?alt=media&token=fa5aaba5-dc01-4a3a-867a-b3ad52cb3a82",
+      "price": 12,
+      "owner_id": "661ad05f443398c661a1974b",
+      "stock": 100,
+      "category": "pantalones",
+      "created_at": "2024-02-04T23:14:30.909Z",
+      "updated_at": "2024-02-04T23:14:30.909Z",
+      "version": 0
+    },
+    {
+      "_id": "65c01a593d3aba5858291561",
+      "title": "Pantalón Los Angeles Lakers",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F03%20-%20la-pantalon.jpg?alt=media&token=a2348d41-39b7-431d-9524-bcff5a16b910",
+      "price": 18,
+      "owner_id": "661ad05f443398c661a1974b",
+      "stock": 100,
+      "category": "pantalones",
+      "created_at": "2024-02-04T23:14:33.746Z",
+      "updated_at": "2024-02-04T23:14:33.746Z",
+      "version": 0
+    },
+    {
+      "_id": "65c01a633d3aba5858291567",
+      "title": "Zapatillas Air Jordan Blue High",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F05-zapatilla5.png?alt=media&token=d719ec59-a785-4234-8cfa-cae31678ce2f",
+      "price": 75,
+      "owner_id": "661ad05f443398c661a1974b",
+      "stock": 50,
+      "category": "zapatillas",
+      "created_at": "2024-02-04T23:14:43.944Z",
+      "updated_at": "2024-02-04T23:14:43.944Z",
+      "version": 0
+    },
+    {
+      "_id": "65c01a1d3d3aba585829153f",
+      "title": "Camiseta Chicago Bulls",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F02%20-%20cb-camiseta.jpg?alt=media&token=4c873159-fc21-4aa3-bd68-f320bef7655c",
+      "price": 28,
+      "owner_id": "661ad05f443398c661a1974b",
+      "stock": 100,
+      "category": "camisetas",
+      "created_at": "2024-02-04T23:13:33.239Z",
+      "updated_at": "2024-02-04T23:13:33.239Z",
+      "version": 0
+    },
+    {
+      "_id": "65c01a3e3d3aba5858291555",
+      "title": "Gorra Golden State",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F01%20-%20gs-gorra.jpg?alt=media&token=63e65e7d-c470-4d07-9274-be953b9a6be1",
+      "price": 18.5,
+      "owner_id": "661ad05f443398c661a1974b",
+      "stock": 100,
+      "category": "gorras",
+      "created_at": "2024-02-04T23:14:06.734Z",
+      "updated_at": "2024-02-04T23:14:06.734Z",
+      "version": 0
+    },
+    {
+      "_id": "65c01a3c3d3aba5858291553",
+      "title": "Gorra Chicago Bulls",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F01%20-%20cb-gorra.jpg?alt=media&token=b44216ed-121b-40c2-8d99-f45a29d97dbf",
+      "price": 18.5,
+      "owner_id": "661ad05f443398c661a1974b",
+      "stock": 100,
+      "category": "gorras",
+      "created_at": "2024-02-04T23:14:04.244Z",
+      "updated_at": "2024-02-04T23:14:04.244Z",
+      "version": 0
+    },
+    {
+      "_id": "65c01a173d3aba585829153b",
+      "title": "Camiseta Los Angeles Lakers",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/basketstore-d9daa.appspot.com/o/Productos%2F02%20-%20la-camiseta.jpg?alt=media&token=61e28a82-47ef-4a77-8f8e-b49e65e8d9db",
+      "price": 25,
+      "owner_id": "661ad05f443398c661a1974b",
+      "stock": 100,
+      "category": "camisetas",
+      "created_at": "2024-02-04T23:13:27.063Z",
+      "updated_at": "2024-02-04T23:13:27.063Z",
+      "version": 0
+    }
+  ]
+  
