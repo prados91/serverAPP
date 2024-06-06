@@ -6,6 +6,7 @@ class PaymentsController {
     }
     checkout = async (req, res, next) => {
         try {
+            const filter = {};
             const options = {
                 limit: req.query.limit || 10,
                 page: req.query.page || 1,
@@ -13,7 +14,10 @@ class PaymentsController {
                 lean: true,
             };
             const { _id } = req.user;
-            const response = await this.service.checkout({ _id, options });
+            if (_id) {
+                filter.user_id = _id;
+            }
+            const response = await this.service.checkout({ filter, options });
             return res.json(response);
         } catch (error) {
             return next(error);
