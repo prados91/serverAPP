@@ -11,6 +11,7 @@ const model = products;
 describe("Testeando SERVER API: USER + PRODUCT (CREATE/READ/UPDATE/DELETE)", () => {
     const user = {
         name: "SUPERTEST",
+        lastName:"TESTING",
         email: "augusto@coder.com",
         password: "hola1234",
         role: "ADMIN",
