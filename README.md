@@ -51,7 +51,5 @@ npm start
 [Documentación](https://coderbasketstore.up.railway.app/api/docs)
 
 ## Vistas
-
-Para utilizar el servidor desde un cliente, puede ingresar a la siguiente ruta:
 [Front-End](https://coderbasketstore.netlify.app/)
 
