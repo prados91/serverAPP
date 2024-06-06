@@ -331,18 +331,12 @@ paths:
             application/json:
               schema:
                 $ref: '#components/responses/uLogin'
-        '400':
-          description: Campos faltantes
-          content:
-            application/json:
-              schema:
-                $ref: '#components/responses/incomplete'
         '401':
           description: Credenciales invalidas
           content:
             application/json:
               schema:
-                $ref: '#components/responses/auth'
+                $ref: '#components/responses/uAuth'
         '500':
           description: Servidor caído
           content:
@@ -362,13 +356,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#components/responses/signout'
+                $ref: '#components/responses/uSignout'
         '401':
           description: Usuario no autenticado
           content:
             application/json:
               schema:
-                $ref: '#components/responses/auth'
+                $ref: '#components/responses/uAuth'
         '500':
           description: Error en el servidor
           content:
@@ -582,13 +576,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#components/responses/auth'
+                $ref: '#components/responses/uAuth'
         '403':
           description: Acceso no permitido
           content:
             application/json:
               schema:
-                $ref: '#components/responses/forbidden'
+                $ref: '#components/responses/uForbidden'
         '404':
           description: Documento/s no encontrados
           content:
