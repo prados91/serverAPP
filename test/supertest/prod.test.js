@@ -9,7 +9,7 @@ const requester = supertest("http://localhost:" + process.env.PORT + "/api");
 
 const model = products;
 
-describe("Testeando SERVER API: USER + PRODUCT", () => {
+describe("Testeando SERVER API: PRODUCT. CREATE/READ/UPDATE/DELETE", () => {
     const user = {
         name: "SUPERTEST",
         email: "augusto@coder.com",

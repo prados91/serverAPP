@@ -2,13 +2,13 @@ import "dotenv/config.js";
 import { expect } from "chai";
 import supertest from "supertest";
 import dao from "../../src/data/index.factory.js";
-const { products } = dao;
+const { orders } = dao;
 
 const requester = supertest("http://localhost:" + process.env.PORT + "/api");
 
-const model = products;
+const model = orders;
 
-describe("Testeando SERVER API: USER + PRODUCT", () => {
+describe("Testeando SERVER API: USER (REGISTER/LOGIN/VERIFY/DELETE) + ORDER(CREATE/READ/UPDATE/DELETE)", () => {
     const user = {
         name: "SUPERTEST",
         email: "augusto@coder.com",
