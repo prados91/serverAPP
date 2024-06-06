@@ -58,7 +58,7 @@ server.use(errorHandler);
 server.use(pathHandler);
 
 // Clusters
-if (cluster.isPrimary) {
+if (!cluster.isPrimary) {
     winstonLog.INFO(`PRIMARY ID: ${process.pid}`);
     const numberOfCPUs = cpus().length;
     winstonLog.INFO(`NUMBER OF CPUS: ${numberOfCPUs}`);
