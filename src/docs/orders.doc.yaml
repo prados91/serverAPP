@@ -301,7 +301,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/responses/oFatal'
-  /api/orders/{oid}:
+  /api/orders/:oid:
     put:
       summary: Actualizar los datos de una orden
       tags:
