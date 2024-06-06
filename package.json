@@ -14,7 +14,10 @@
     "report": "artillery report ./test/flow/flow.html",
     "mocha": "mocha ./test/mocha",
     "chai": "mocha ./test/chai",
-    "super": "mocha ./test/supertest"
+    "super": "mocha ./test/supertest",
+    "superProd": "mocha ./test/supertest/prod.test.js",
+    "superUser": "mocha ./test/supertest/user.test.js",
+    "superOrder": "mocha ./test/supertest/order.test.js"
   },
   "keywords": [],
   "author": "",
