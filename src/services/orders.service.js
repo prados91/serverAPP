@@ -9,6 +9,7 @@ class OrdersService {
     readOne = async (id) => await this.repository.readOne(id);
     update = async (id, data) => await this.repository.update(id, data);
     destroy = async (id) => await this.repository.destroy(id);
+    destroyAll = async (id) => await this.repository.destroyAll(id);
     report = async (id) => await this.repository.report(id);
 }
 const service = new OrdersService();

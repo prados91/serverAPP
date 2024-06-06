@@ -75,9 +75,18 @@ class OrdersController {
             return next(error);
         }
     };
+    destroyAll = async (req, res, next) => {
+        try {
+            const { _id } = req.user;
+            const response = await this.service.destroyAll(_id);
+            return res.success200(response);
+        } catch (error) {
+            return next(error);
+        }
+    };
 }
 
 export default OrdersController;
 const controller = new OrdersController();
-const { create, read, report, update, destroy } = controller;
-export { create, read, report, update, destroy };
+const { create, read, report, update, destroy, destroyAll } = controller;
+export { create, read, report, update, destroy, destroyAll };

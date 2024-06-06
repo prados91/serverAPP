@@ -90,6 +90,14 @@ class MongoManager {
             throw error;
         }
     }
+    async destroyAll(id) {
+        try {
+            const all = await this.model.deleteMany({ user_id: id }).lean();
+            return all;
+        } catch (error) {
+            throw error;
+        }
+    }
     async stats({ filter }) {
         try {
             let stats = await this.model.find(filter).explain("executionStats");
