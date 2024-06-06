@@ -46,10 +46,12 @@ Para iniciar el servidor, ejecuta:
 ```bash
 npm start
 ```
+## Despliegue del servidor en railway.
+## Documentación del servidor.
+[Documentación](https://coderbasketstore.up.railway.app/api/docs)
+
 ## Vistas
 
 Para utilizar el servidor desde un cliente, puede ingresar a la siguiente ruta:
-```bash
 [Front-End](https://coderbasketstore.netlify.app/)
-```
 
