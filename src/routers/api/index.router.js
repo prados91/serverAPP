@@ -12,7 +12,7 @@ class ApiRouter extends CustomRouter {
         this.router.use("/products", productsRouter);
         this.router.use("/orders", ordersRouter);
         this.router.use("/sessions", sessionsRouter);
-        this.router.use("/comments", commentsRouter);
+        //this.router.use("/comments", commentsRouter);
         this.router.use("/payments", paymentsRouter);
     }
 }

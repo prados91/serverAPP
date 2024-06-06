@@ -31,17 +31,47 @@ class ProductsManager {
         }
     }
     read({ filter, options }) {
-        //este metodo para ser compatible con las otras persistencias
-        //necesita agregar los filtros
-        //y la paginacion/orden
         try {
             if (this.products.length === 0) {
                 const error = new Error("NOT FOUND!");
                 error.statusCode = 404;
                 throw error;
-            } else {
-                return this.products;
             }
+            let filteredProducts = this.products.filter((product) => {
+                for (let key in filter) {
+                    if (product[key] !== filter[key]) {
+                        return false;
+                    }
+                }
+                return true;
+            });
+            if (options.sort) {
+                const [key, order] = Object.entries(options.sort)[0];
+                filteredProducts.sort((a, b) => {
+                    if (a[key] < b[key]) return order === "asc" ? -1 : 1;
+                    if (a[key] > b[key]) return order === "asc" ? 1 : -1;
+                    return 0;
+                });
+            }
+
+            const page = options.page || 1;
+            const limit = options.limit || 10;
+            const startIndex = (page - 1) * limit;
+            const endIndex = page * limit;
+            const paginatedProducts = filteredProducts.slice(startIndex, endIndex);
+            const result = {
+                docs: paginatedProducts,
+                totalDocs: filteredProducts.length,
+                limit: limit,
+                totalPages: Math.ceil(filteredProducts.length / limit),
+                page: page,
+                pagingCounter: startIndex + 1,
+                hasPrevPage: page > 1,
+                hasNextPage: endIndex < filteredProducts.length,
+                prevPage: page > 1 ? page - 1 : null,
+                nextPage: endIndex < filteredProducts.length ? page + 1 : null,
+            };
+            return result;
         } catch (error) {
             throw error;
         }
@@ -53,35 +83,53 @@ class ProductsManager {
                 const error = new Error("NOT FOUND!");
                 error.statusCode = 404;
                 throw error;
-            } else {
-                return one;
             }
+            return one;
         } catch (error) {
             throw error;
         }
     }
-    async update(eid, data) {
+    readByEmail(email) {
         try {
-            const one = this.readOne(eid);
-            notFoundOne(one);
-            for (let each in data) {
-                one[each] = data[each];
+            const one = this.products.find((each) => each.email === email);
+            if (!one) {
+                const error = new Error("NOT FOUND!");
+                error.statusCode = 404;
+                throw error;
             }
+            return one;
+        } catch (error) {
+            throw error;
+        }
+    }
+    async update(id, data) {
+        try {
+            const index = this.products.findIndex((each) => each._id === id);
+            if (index === -1) {
+                const error = new Error("NOT FOUND!");
+                error.statusCode = 404;
+                throw error;
+            }
+            this.products[index] = { ...this.products[index], ...data };
             const jsonData = JSON.stringify(this.products, null, 2);
             await fs.promises.writeFile(this.path, jsonData);
-            return one;
+            return this.products[index];
         } catch (error) {
             throw error;
         }
     }
     async destroy(id) {
         try {
-            const one = this.readOne(id);
-            notFoundOne(one);
-            this.products = this.products.filter((each) => each._id !== id);
+            const index = this.products.findIndex((each) => each._id === id);
+            if (index === -1) {
+                const error = new Error("NOT FOUND!");
+                error.statusCode = 404;
+                throw error;
+            }
+            const [deletedProduct] = this.products.splice(index, 1);
             const jsonData = JSON.stringify(this.products, null, 2);
             await fs.promises.writeFile(this.path, jsonData);
-            return one;
+            return deletedProduct;
         } catch (error) {
             throw error;
         }

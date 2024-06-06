@@ -9,12 +9,13 @@
     "prod": "nodemon ./server.js --env prod",
     "dev": "nodemon ./server.js --env dev",
     "test": "nodemon ./server.js --env test",
-    "mock": "node ./src/data/mocks/products.mocks.js",
     "performance": "artillery run ./test/flow/flow.yaml --output ./test/flow/flow.json",
     "report": "artillery report ./test/flow/flow.html",
     "mocha": "mocha ./test/mocha",
     "chai": "mocha ./test/chai",
-    "super": "mocha ./test/supertest"
+    "superProd": "mocha ./test/supertest/prod.test.js",
+    "superUser": "mocha ./test/supertest/user.test.js",
+    "superOrder": "mocha ./test/supertest/order.test.js"
   },
   "keywords": [],
   "author": "",

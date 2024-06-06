@@ -2,25 +2,20 @@ import "dotenv/config.js";
 import { expect } from "chai";
 import supertest from "supertest";
 import dao from "../../src/data/index.factory.js";
-const { products } = dao;
+const { users } = dao;
 
 const requester = supertest("http://localhost:" + process.env.PORT + "/api");
 
-const model = products;
+const model = users;
 
-describe("Testeando SERVER API: USER + PRODUCT", () => {
+describe("Testeando SERVER API: USERS. REGISTER/LOGIN/VERIFY/READ/UPDATE/DELETE", () => {
     const user = {
         name: "SUPERTEST",
+        lastName:"TESTING",
         email: "augusto@coder.com",
         password: "hola1234",
         role: "ADMIN",
         verified: true,
-    };
-    const product = {
-        title: "SUPERTEST",
-        category: "TEST",
-        price: 1,
-        stock: 1,
     };
     let token = {};
     it("Registro de un usuario correctamente", async function () {
@@ -43,24 +38,14 @@ describe("Testeando SERVER API: USER + PRODUCT", () => {
         uid = _body.response.docs[0]._id;
         expect(statusCode).to.be.equals(200);
     });
-    let pid;
-    it("Creación de un producto correctamente", async () => {
-        const one = await model.create(product);
-        pid = one._id;
+    it("Lectura del usuario registrado", async () => {
+        const one = await model.readOne(uid);
         expect(one).to.have.property("_id");
     });
-    it("Lectura del producto creado", async () => {
-        const one = await model.readOne(pid);
-        expect(one).to.have.property("_id");
-    });
-    it("Actualización del producto creado", async () => {
-        const before = await model.readOne(pid);
-        const one = await model.update(pid, { title: "SUPER TEST MODIFICADO" });
-        expect(one.title).not.to.be.equals(before.title);
-    });
-    it("Elimincación del producto creado", async () => {
-        const one = await model.destroy(pid);
-        expect(one).to.have.property("_id");
+    it("Actualización del usuario registrado", async () => {
+        const before = await model.readOne(uid);
+        const one = await model.update(uid, { name: "SUPER TEST MODIFICADO" });
+        expect(one.name).not.to.be.equals(before.name);
     });
     it("Cerrado de sesión correctamente", async () => {
         const response = await requester.post("/sessions/signout").set("Cookie", [token.key + "=" + token.value]);

@@ -45,8 +45,9 @@ class OrdersController {
     };
     report = async (req, res, next) => {
         try {
-            const { uid } = req.params;
-            const report = await this.service.reportBill(uid);
+            const { _id } = req.user;
+            const uid = _id.toString();
+            const report = await this.service.report(uid);
             return res.json({
                 statusCode: 200,
                 response: report,
@@ -74,9 +75,18 @@ class OrdersController {
             return next(error);
         }
     };
+    destroyAll = async (req, res, next) => {
+        try {
+            const { _id } = req.user;
+            const response = await this.service.destroyAll(_id);
+            return res.success200(response);
+        } catch (error) {
+            return next(error);
+        }
+    };
 }
 
 export default OrdersController;
 const controller = new OrdersController();
-const { create, read, report, update, destroy } = controller;
-export { create, read, report, update, destroy };
+const { create, read, report, update, destroy, destroyAll } = controller;
+export { create, read, report, update, destroy, destroyAll };
