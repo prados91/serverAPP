@@ -12,7 +12,6 @@ class PaymentsRep {
     read = async ({ filter, options }) => await this.model.read({ filter, options });
     checkout = async ({ filter, options }) => {
         const cart = await orders.read({ filter, options });
-        console.log(cart);
         let productsOnCart = cart.docs;
         productsOnCart = productsOnCart.map((each) => new CheckoutDTO(each));
         const line_items = productsOnCart;
