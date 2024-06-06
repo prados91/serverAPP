@@ -2,18 +2,20 @@ import "dotenv/config.js";
 import { expect } from "chai";
 import supertest from "supertest";
 import dao from "../../src/data/index.factory.js";
-const { orders } = dao;
+const { orders, products } = dao;
 
 const requester = supertest("http://localhost:" + process.env.PORT + "/api");
 
-const model = orders;
+const model = products;
+const dOrders = orders;
 
 describe("Testeando SERVER API: USER (REGISTER/LOGIN/VERIFY/DELETE) + ORDER(CREATE/READ/UPDATE/DELETE)", () => {
     const user = {
         name: "SUPERTEST",
+        lastName: "TESTING",
         email: "augusto@coder.com",
         password: "hola1234",
-        role: "ADMIN",
+        role: "USER",
         verified: true,
     };
     const product = {
@@ -22,6 +24,7 @@ describe("Testeando SERVER API: USER (REGISTER/LOGIN/VERIFY/DELETE) + ORDER(CREA
         price: 1,
         stock: 1,
     };
+    let order = {};
     let token = {};
     it("Registro de un usuario correctamente", async function () {
         this.timeout(10000);
@@ -53,10 +56,19 @@ describe("Testeando SERVER API: USER (REGISTER/LOGIN/VERIFY/DELETE) + ORDER(CREA
         const one = await model.readOne(pid);
         expect(one).to.have.property("_id");
     });
-    it("Actualización del producto creado", async () => {
-        const before = await model.readOne(pid);
-        const one = await model.update(pid, { title: "SUPER TEST MODIFICADO" });
-        expect(one.title).not.to.be.equals(before.title);
+    it("Creación de una orden correctamente", async () => {
+        const data = {
+            user_id: uid,
+            product_id: pid,
+            quantity: 50,
+        };
+        const one = await dOrders.create(data);
+        order = one;
+        expect(one).to.have.property("_id");
+    });
+    it("Eliminación de la orden creada", async () => {
+        const one = await dOrders.destroy(order._id);
+        expect(one).to.have.property("_id");
     });
     it("Eliminación del producto creado", async () => {
         const one = await model.destroy(pid);
