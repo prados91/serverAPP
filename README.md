@@ -8,10 +8,18 @@ Este repositorio contiene la programación backend de un servidor para un proyec
 
 - **public/**: Archivos estáticos servidos al cliente.
 - **src/**: Código fuente principal del servidor.
+  - **config/**: Configuraciones del servidor y entorno.
+  - **controllers/**: Controladores que gestionan las solicitudes y respuestas de las rutas.
+  - **data/**: Archivos de datos o mock data utilizados por la aplicación.
+  - **docs/**: Documentación adicional del proyecto.
+  - **dto/**: Data Transfer Objects para estructurar datos entre capas.
+  - **middlewares/**: Middlewares personalizados para el manejo de solicitudes.
+  - **repositories/**: Acceso a datos y lógica de persistencia.
+  - **routers/**: Definición de las rutas de la API.
+  - **services/**: Lógica de negocio y servicios de la aplicación.
+  - **utils/**: Funciones utilitarias y helpers.
+  - **views/**: Vistas y templates HTML para renderizado en el cliente.
 - **test/**: Pruebas unitarias y de integración.
-- **.gitignore**: Archivos y directorios ignorados por Git.
-- **package-lock.json**: Asegura la instalación consistente de dependencias.
-- **package.json**: Información del proyecto y dependencias.
 - **server.js**: Punto de entrada principal que inicia el servidor.
 - **utils.js**: Funciones utilitarias usadas en el servidor.
 
@@ -37,3 +45,11 @@ Para instalar y ejecutar este proyecto en tu máquina local, sigue estos pasos:
 Para iniciar el servidor, ejecuta:
 ```bash
 npm start
+```
+## Vistas
+
+Para utilizar el servidor desde un cliente, puede ingresar a la siguiente ruta:
+```bash
+[Front-End](https://coderbasketstore.netlify.app/)
+```
+
