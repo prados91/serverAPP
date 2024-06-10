@@ -302,6 +302,36 @@ paths:
               schema:
                 $ref: '#/components/responses/oFatal'
   /api/orders/:oid:
+    get:
+      summary: Leer una órden del usuario en la base de datos
+      tags:
+        - Orders
+      parameters:
+        - name: oid
+          in: path
+          required: true
+          description: ObjectId de la orden a buscar
+          schema:
+            $type: string
+      responses:
+        '200':
+          description: Éxito en la lectura de la orden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/oReadOne'
+        '404':
+          description: Documento no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/oNotFound'
+        '500':
+          description: Falla del servidor al leer el documento
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/oFatal'
     put:
       summary: Actualizar los datos de una orden
       tags:
