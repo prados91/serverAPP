@@ -220,6 +220,91 @@ components:
         total: 77
         currency: "USD"
         date: "2024-06-05T22:59:23.476Z"
+    oCheckout:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          description: Estado de la solicitud
+        response:
+          type: object
+          description: Documentos de la solicitud
+      example:
+        id: "cs_test_a1MfMaAVSGoFLjN9NyiVCXUcWv4mDHZxlvDtwzSDiLJvyC9Nt4TceXiy7q"
+        object: "checkout.session"
+        after_expiration: null
+        allow_promotion_codes: null
+        amount_subtotal: 9000
+        amount_total: 9000
+        automatic_tax:
+          enabled: false
+          liability: null
+          status: null
+        billing_address_collection: null
+        cancel_url: null
+        client_reference_id: null
+        client_secret: null
+        consent: null
+        consent_collection: null
+        created: 1718030584
+        currency: "usd"
+        currency_conversion: null
+        custom_fields: []
+        custom_text:
+          after_submit: null
+          shipping_address: null
+          submit: null
+          terms_of_service_acceptance: null
+        customer: null
+        customer_creation: "if_required"
+        customer_details: null
+        customer_email: null
+        expires_at: 1718116983
+        invoice: null
+        invoice_creation:
+          enabled: false
+          invoice_data:
+            account_tax_ids: null
+            custom_fields: null
+            description: null
+            footer: null
+            issuer: null
+            metadata: {}
+            rendering_options: null
+        livemode: false
+        locale: null
+        metadata: {}
+        mode: "payment"
+        payment_intent: null
+        payment_link: null
+        payment_method_collection: "if_required"
+        payment_method_configuration_details: null
+        payment_method_options:
+          card:
+            request_three_d_secure: "automatic"
+        payment_method_types:
+          - "card"
+        payment_status: "unpaid"
+        phone_number_collection:
+          enabled: false
+        recovered_from: null
+        saved_payment_method_options: null
+        setup_intent: null
+        shipping_address_collection: null
+        shipping_cost: null
+        shipping_details: null
+        shipping_options: []
+        status: "open"
+        submit_type: null
+        subscription: null
+        success_url: "http://coderbasketstore.netlify.app/thanks"
+        total_details:
+          amount_discount: 0
+          amount_shipping: 0
+          amount_tax: 0
+        ui_mode: "hosted"
+        url: "https://checkout.stripe.com/c/pay/cs_test_a1MfMaAVSGoFLjN9NyiVCXUcWv4mDHZxlvDtwzSDiLJvyC9Nt4TceXiy7q#fidkdWxOYHwnPyd1blpxYHZxWjA0VU83NH9OdTNEc3J%2FMEtEXUZHMWRoUEJCRj1sRlBOSzF3Q01MPDB2aG1pa01nb3dOYT1OdUBcfWJ8TW1yS1Y2SlNoVWB9ST1NMTNgdW9BcXNMUmJoVnNXNTV9NnByc0tBYicpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl"
+
 paths:
   /api/orders:
     post:
@@ -444,7 +529,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/responses/oReport'
+                $ref: '#/components/responses/oCheckout'
         '403':
           description: No puede acceder a este endpoint
           content:
@@ -459,6 +544,38 @@ paths:
                 $ref: '#/components/responses/oNotFound'
         '500':
           description: Falla del servidor al leer los documentos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/oFatal'
+  /api/payments/checkout:
+    post:
+      summary: Crear una orden de pago en STRIPE
+      tags:
+        - Orders
+      security:
+        - cookieAuth: []
+      responses:
+        '201':
+          description: Éxito en la creación de una orden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/oCheckout'
+        '401':
+          description: Credenciales inválidas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/oAuth'
+        '403':
+          description: Acceso no permitido
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/oForbidden'
+        '500':
+          description: Falla del servidor al crear una orden
           content:
             application/json:
               schema:
